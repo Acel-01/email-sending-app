@@ -1,0 +1,15 @@
+<h1>List of Emails</h1>
+
+{% block content %}
+    {% for email in object_list %}
+        <div class="card">
+            <div class="card-header">
+                {{email.email}}
+            </div>
+            <div class="card-body">
+                    <a href="{% url 'delete_email' email.pk %}">Delete</a>
+            </div>
+        </div>
+        <br />
+    {% endfor %}
+{% endblock content %}
